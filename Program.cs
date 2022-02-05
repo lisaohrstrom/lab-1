@@ -60,15 +60,7 @@ namespace AppliedWebArcitechture_ConsoleQuiz
 
                 int value;
 
-                // Checks if the user input is not a number
-                if (!int.TryParse(userInput, out value))
-                {
-                    Console.WriteLine("\nThis is not a number...");
-                    Console.WriteLine("Please try again:");
-                    userInput = Console.ReadLine();
-                }
-
-                if (Convert.ToInt32(userInput) > 3 || Convert.ToInt32(userInput) < 1)
+                while (!int.TryParse(userInput, out value) || Convert.ToInt32(userInput) > 3 || Convert.ToInt32(userInput) < 1) 
                 {
                     Console.WriteLine("\nInvalid input, only 1, 2 or 3 is allowed.");
                     Console.WriteLine("Please try again:");
